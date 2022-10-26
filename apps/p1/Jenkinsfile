@@ -6,21 +6,20 @@ pipeline {
    
      stage('Install Dependencies') { 
         steps { 
-            sh "npm install -g yarn"
-            sh 'echo "p1 install"'
-            sh 'ls'
-            sh 'cd apps'   
-            sh 'ls'
-            sh 'cd p1'
-            sh 'ls'
-            sh 'yarn install'
-            sh 'yarn build'
+            sh """npm install -g yarn
+            echo "p1 install"
+            ls
+            cd apps/p1
+            ls
+            yarn install
+            yarn build"""
          }
       }
      
      stage('Test') { 
         steps { 
             sh 'echo "p1 testing application..."'
+            sh 'ls'
         }
       }
 
