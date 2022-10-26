@@ -6,22 +6,23 @@ pipeline {
    
      stage('Install Dependencies') { 
         steps { 
-           sh 'echo "p1 install"'
-           sh 'cd apps/p1'
-           sh 'yarn install'
-           sh 'yarn build'
+            sh "npm install -g yarn"
+            sh 'echo "p1 install"'
+            sh 'cd apps/p1'
+            sh 'yarn install'
+            sh 'yarn build'
          }
       }
      
      stage('Test') { 
         steps { 
-           sh 'echo "p1 testing application..."'
+            sh 'echo "p1 testing application..."'
         }
       }
 
       stage("Deploy application") { 
          steps { 
-           sh 'echo "p1 deploying application..."'
+            sh 'echo "p1 deploying application..."'
          }
       }
    }
