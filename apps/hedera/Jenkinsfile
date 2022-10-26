@@ -7,9 +7,9 @@ pipeline {
      stage('Install Dependencies') { 
         steps { 
             sh """npm install -g yarn
-            echo "p1 install"
+            echo "hedera install"
             ls
-            cd apps/p1
+            cd apps/hedera
             ls
             yarn
             yarn build"""
@@ -18,14 +18,14 @@ pipeline {
      
      stage('Test') { 
         steps { 
-            sh 'echo "p1 testing application..."'
+            sh 'echo "hedera testing application..."'
             sh 'ls'
         }
       }
 
       stage("Deploy application") { 
          steps { 
-            sh 'echo "p1 deploying application..."'
+            sh 'echo "hedera deploying application..."'
          }
       }
    }
