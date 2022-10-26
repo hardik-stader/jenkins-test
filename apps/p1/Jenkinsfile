@@ -9,7 +9,8 @@ pipeline {
             sh "npm install -g yarn"
             sh 'echo "p1 install"'
             sh 'ls'
-            sh 'cd apps'
+            sh 'cd apps'   
+            sh 'ls'
             sh 'cd p1'
             sh 'ls'
             sh 'yarn install'
