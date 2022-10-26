@@ -11,7 +11,7 @@ pipeline {
             ls
             cd apps/p1
             ls
-            yarn install
+            yarn
             yarn build"""
          }
       }
