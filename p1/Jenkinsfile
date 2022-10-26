@@ -1,0 +1,32 @@
+pipeline {
+  agent any
+    
+  tools {nodejs "node"}
+    
+  stages {
+        
+    stage('Git') {
+      steps {
+        echo "Git p1 step"
+        // git 'https://github.com/hardik-stader/jenkins-test.git'
+      }
+    }
+     
+    stage('Build') {
+      steps {
+        echo "Build p1 step"
+        // sh 'npm install'
+        //  sh '<<Build Command>>'
+      }
+    }  
+    
+            
+    stage('Test') {
+      steps {
+
+        echo "Test p1 step"
+        // sh 'node test'
+      }
+    }
+  }
+}
