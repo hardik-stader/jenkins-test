@@ -1,30 +1,28 @@
-pipeline {
-  agent any
+pipeline { 
+  
+   agent any
 
-  stages {
-        
-    stage('Git') {
-      steps {
-        echo "Git p0 step"
-        // git 'https://github.com/hardik-stader/jenkins-test.git'
-      }
-    }
+   stages {
+   
+     stage('Install Dependencies') { 
+        steps { 
+           sh 'npm install' 
+        }
+     }
      
-    stage('Build') {
-      steps {
-        echo "Build p0 step"
-        // sh 'npm install'
-        //  sh '<<Build Command>>'
+     stage('Test') { 
+        steps { 
+           sh 'echo "testing application..."'
+        }
       }
-    }  
-    
-            
-    stage('Test') {
-      steps {
 
-        echo "Test p0 step"
-        // sh 'node test'
-      }
-    }
-  }
-}
+         stage("Deploy application") { 
+         steps { 
+           sh 'echo "deploying application..."'
+         }
+
+     }
+  
+   	}
+
+   }
