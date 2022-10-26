@@ -1,0 +1,32 @@
+pipeline { 
+  
+   agent any
+   tools {nodejs "nodejs"}
+   stages {
+   
+     stage('Install Dependencies') { 
+        steps { 
+            sh """npm install -g yarn
+            echo "p2 install"
+            ls
+            cd apps/p1
+            ls
+            yarn
+            yarn build"""
+         }
+      }
+     
+     stage('Test') { 
+        steps { 
+            sh 'echo "p2 testing application..."'
+            sh 'ls'
+        }
+      }
+
+      stage("Deploy application") { 
+         steps { 
+            sh 'echo "p2 deploying application..."'
+         }
+      }
+   }
+}
