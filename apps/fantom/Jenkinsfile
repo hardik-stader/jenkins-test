@@ -7,9 +7,9 @@ pipeline {
      stage('Install Dependencies') { 
         steps { 
             sh """npm install -g yarn
-            echo "p2 install"
+            echo "fantom install"
             ls
-            cd apps/p1
+            cd apps/fantom
             ls
             yarn
             yarn build"""
@@ -18,14 +18,14 @@ pipeline {
      
      stage('Test') { 
         steps { 
-            sh 'echo "p2 testing application..."'
+            sh 'echo "fantom testing application..."'
             sh 'ls'
         }
       }
 
       stage("Deploy application") { 
          steps { 
-            sh 'echo "p2 deploying application..."'
+            sh 'echo "fantom deploying application..."'
          }
       }
    }
